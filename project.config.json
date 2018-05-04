@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
 	"appid": "wx07d051d3d0e12de8",
-	"projectname": "ddd",
+	"projectname": "myshop",
 	"condition": {
 		"search": {
 			"current": -1,
