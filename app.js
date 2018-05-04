@@ -1,8 +1,4 @@
-
-
 var Bmob = require('utils/bmob.js')
-
-
 // var BmobSocketIo = require('utils/bmobSocketIo.js').BmobSocketIo;
 // const BmobSocketIo = require('utils/tunnel');
 Bmob.initialize(

@@ -12,6 +12,7 @@ Page({
     bannerImgs:[],
     details:[],
     length:6,
+    display: 'none',
   },
 
   /**
@@ -22,13 +23,14 @@ Page({
     that =this;
      var Diary = Bmob.Object.extend("recommend");
      var query = new Bmob.Query(Diary);
+     var id = options.title;
      query.get(options.title, {
        success: function (result) {
          console.log(result)
          var bannerImg1 = result.get("bannerImg1");
          var bannerImg2 = result.get("bannerImg2");
          var bannerImg3 = result.get("bannerImg3");
-        
+
          that.setData({
            details:result,
            bannerImgs: [bannerImg1.url, bannerImg2.url, bannerImg3.url]
@@ -102,5 +104,35 @@ Page({
       title: '买袜子，就找我',
       path: '/pages/test/test',
     }
+  },
+
+  //点赞
+  dianzan: function (e){
+  },
+
+  //立即购买功能
+  payout: function (e) {
+    that = this;
+    that.setData({
+      radioCheckVal: ''
+    });
+    that.setData({
+      display: "block"
+    })
+  },
+
+  //mask隐藏或消失
+  hideview: function () {
+    this.setData({
+      display: "none"
+    })
+  },
+
+  //选取袜子颜色功能
+  radioChange: function (e) {
+    var radioCheckVal = e.detail.value
+    this.setData({
+      radioCheckVal: radioCheckVal
+    })
   }
 })
