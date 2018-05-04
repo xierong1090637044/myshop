@@ -33,8 +33,8 @@
   <view class='item' bindtap='dianzan'> <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/6274aa3440885841806d243d32791820.png' class='imaged1'></image>
   <view class='textd1'>点赞</view>
   </view>
-  <view class='item'> <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/6274aa3440885841806d243d32791820.png' class='imaged1'></image>
-  <view class='textd1'>点赞</view>
+  <view class='item'> <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/beb34b6c402af239800c919585adfdba.png' class='imaged1'></image>
+  <view class='textd1'>首页</view>
   </view>
   <view class='item'> <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/6274aa3440885841806d243d32791820.png' class='imaged1'></image>
   <view class='textd1'>点赞</view>

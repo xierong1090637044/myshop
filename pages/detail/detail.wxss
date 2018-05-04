@@ -214,6 +214,7 @@ margin-left: 4%;
 .textd1
 {
   color: #444444;
+  font-size: 14px;
 }
 .textd2
 {

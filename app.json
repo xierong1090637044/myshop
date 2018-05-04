@@ -20,6 +20,8 @@
       },
       {
         "pagePath": "pages/test/test",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home1.png",
         "text": "首页"
       },
       {
