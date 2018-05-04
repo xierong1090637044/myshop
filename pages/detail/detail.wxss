@@ -45,6 +45,7 @@
 }
 .button
 {
+  position: unset !important;
   text-align: center;
   background-color: #fff;
   float: right;
