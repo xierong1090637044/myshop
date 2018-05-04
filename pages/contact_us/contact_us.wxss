@@ -1,0 +1,39 @@
+.background
+{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+.text1
+{
+  margin-top: 60rpx;
+  margin-bottom: 80rpx;
+}
+.qcode
+{
+  background: url("http://bmob-cdn-12755.b0.upaiyun.com/2018/03/19/9542826840b64d0d80c91a0dbab19afd.jpg");
+  background-size: 200rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+.item
+{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 180rpx;
+  display: inline-block;
+  margin-left: 80rpx;
+  margin-right: 80rpx;
+}
+.contactus
+{
+  background: url("http://bmob-cdn-12755.b0.upaiyun.com/2018/03/19/4e4d7f4540a9198480d65cd724110eed.png");
+  background-size: 200rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+.text3{
+  font-size: 25rpx;
+  font-weight: normal;
+}

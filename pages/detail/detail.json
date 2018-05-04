@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": false,
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "购物车",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+}

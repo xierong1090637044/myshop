@@ -1,0 +1,81 @@
+<view class="section tc">
+<!--广告banner-->
+<swiper indicator-dots="true" circular="true"
+  autoplay="true" interval="3000" duration="800" class='swiper'>
+  <block wx:for="{{bannerImgaddr}}" wx:key="">
+  <navigator url="/pages/detail/detail?title={{item.name}}">
+    <swiper-item>
+      <image src="{{item.goodImages.url}}" class="slide-image"/>
+    </swiper-item>
+    </navigator>
+  </block>
+</swiper>
+
+<!--文字阐述-->
+<view class='textstyle'>
+<view class='style1'>总有那么一些人，注定平凡却不平庸</view>
+<view class='style2'>
+<image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/04/19/72d8e71c4058f7298096c7210e8ec709.png' class='labastyle'></image>
+<view class='shopwelcme'>欢迎来到维维的小店</view>
+<image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/04/19/72d8e71c4058f7298096c7210e8ec709.png' class='labastyle1'></image>
+</view>
+</view>
+
+<!--推荐商品-->
+<view class='recommend'>
+<view class='rectext'>
+    <view class='text1'>为您推荐</view>  
+    <view class='text2'>全部商品</view>
+</view>
+<image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/4be7de6f4085d1f48005901696530ea5.PNG' class='recimg'></image>
+<view class='rec-pdu' wx:for='{{recimages}}' wx:key="{{index}}">
+<navigator url="/pages/detail/detail?title={{item.name}}">
+  <image src='{{item.images.url}}' class='rec-pdu-img'></image>
+  </navigator>
+  <view class='rec-text'>
+      <view class="jiage">价格</view>
+      <view class='rec-price'>{{item.price}}</view>
+      <view data-id='{{item.name}}'class='jiage1' bindtap='joincar'><image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/04/20/853a893040f3400480db85337f1d0862.png'  class='gouwuche'></image></view>
+      <view data-id='{{item.name}}' class='goumai' bindtap='payout'>立即购买</view>
+  </view>
+</view>
+</view>
+
+<!--立即购买-->  
+<view class="bg" bindtap='hideview' style='display:{{display}}'></view>  
+<view class="show" style='display:{{display}}'>
+<view class='price'>{{payContent.price}}</view>
+<view class='yangshi'>
+<view class='yangshi2'>请选择颜色</view>
+<radio-group class="yangshi1" bindchange="radioChange">
+<view class='yangshi4'>
+  <label class="{{radioCheckVal=='白色'?'active':''}}">
+    <radio value='{{payContent.yangshi[0]}}' hidden='true'/>{{payContent.yangshi[0]}}
+  </label>
+</view>
+<view class='yangshi4'>
+  <label class="{{radioCheckVal=='黑色'?'active':''}}">
+    <radio value='{{payContent.yangshi[1]}}' hidden='true'/>{{payContent.yangshi[1]}}
+  </label>
+  </view>
+  <view class='yangshi4'>
+  <label class="{{radioCheckVal=='true'?'active':''}}">
+    <radio value='{{payContent.yangshi[2]}}' hidden='true'/>{{payContent.yangshi[2]}}
+  </label>
+  </view>
+  <view class='yangshi4'>
+  <label class="{{radioCheckVal=='true'?'active':''}}">
+    <radio value='{{payContent.yangshi[3]}}' hidden='true'/>{{payContent.yangshi[3]}}
+  </label>
+  </view>
+  <view class='yangshi4'>
+  <label class="{{radioCheckVal=='true'?'active':''}}">
+    <radio value='{{payContent.yangshi[4]}}' hidden='true'/>{{payContent.yangshi[4]}}
+  </label>
+  </view>
+</radio-group>
+</view>
+</view>
+
+<view class='image3' style='display:{{display}}'><image src='{{payContent.images.url}}' class='image4'></image></view> 
+</view>

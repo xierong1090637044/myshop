@@ -1,0 +1,15 @@
+<view class="page">
+    <view class="page__hd i-header">
+        <view class="g-bd">
+                <view bindtap="" class="g-bda-userinfo">
+                    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+                    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                </view>
+              <view class="weather"> <text>{{weatherData}}</text> </view> 
+        </view>
+        <view class='list'>
+        <view bindtap='contact_us' class='contact_us'>联系我们</view>
+        <view bindtap='about_us' class='about_us'>关于我们</view>
+        </view>
+    </view>  
+</view>
