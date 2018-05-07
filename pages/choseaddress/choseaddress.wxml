@@ -1,0 +1,54 @@
+<!--pages/choseaddress/choseaddress.wxml-->
+
+<navigator url='/pages/addaddress/addaddress'>
+ <view class='xzdz'>新增地址</view>
+</navigator>
+
+<radio-group class="radio-group" bindchange="radioChange">
+<view style='float:left;width:95%;margin:2%;border:1px solid#ddd;padding-bottom:10px;box-shadow:1px 1px 1px #ddd;display:{{show}}'>
+  <label class="label" style='display:{{show}}'>
+    <radio value="{{address}}" style='float:right;line-height:10vh'/>
+    <view style='float:left;width:90%'>
+    <text style='font-size:20px'>寄件人：</text><text class='xm'>{{address[0]}}</text><text class='dh'>{{address[1]}}</text>
+    </view>
+    <view style='float:left;width:90%'>
+    <text style='font-size:20px'>地址：</text>
+    <text style='font-size:15px' class='dh'>{{address[2]}}{{address[3]}}</text>
+    </view>
+  </label>
+  <view class='bottom' style='display:{{show}}'><text class='text' bindtap='remove'>删除</text><text class='text' bindtap='modify'>修改</text></view>
+  </view>
+
+  <view style='float:left;width:95%;margin:2%;border:1px solid#ddd;padding-bottom:10px;box-shadow:1px 1px 1px #ddd;display:{{show1}}'>
+  <label class="label">
+    <radio value="{{address1}}" style='float:right;line-height:10vh'/>
+    <view style='float:left;width:90%'>
+    <text style='font-size:20px'>寄件人：</text><text class='xm'>{{address1[0]}}</text><text class='dh'>{{address1[1]}}</text>
+    </view>
+    <view style='float:left;width:90%'>
+    <text style='font-size:20px'>地址：</text>
+    <text style='font-size:15px' class='dh'>{{address1[2]}}{{address1[3]}}</text>
+    </view>
+  </label>
+  <view class='bottom' style='display:{{show1}}'><text class='text'>删除</text><text class='text'>修改</text></view>
+  </view>
+
+  <view style='float:left;width:95%;margin:2%;border:1px solid#ddd;padding-bottom:10px;box-shadow:1px 1px 1px #ddd;display:{{show2}}'>
+  <label class="label" style='display:{{show2}}'>
+    <radio value="{{address2}}" style='float:right;line-height:10vh'/>
+    <view style='float:left;width:90%'>
+    <text style='font-size:20px'>寄件人：</text><text class='xm'>{{address2[0]}}</text><text class='dh'>{{address2[1]}}</text>
+    </view>
+    <view style='float:left;width:90%'>
+    <text style='font-size:20px'>地址：</text>
+    <text style='font-size:15px' class='dh'>{{address2[2]}}{{address2[3]}}</text>
+    </view>
+  </label>
+  <view class='bottom' style='display:{{show2}}'><text class='text'>删除</text><text class='text'>修改</text></view>
+  </view>
+</radio-group>
+
+<view style='text-align:center;display:{{show3}}'>
+  <image style='height:50px;width:50px;margin-top:50%'src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/f334160740bfaa00808c3eceb75bdfeb.png'></image>
+  <view style='font-size:15px;margin-top:2%;color:#444'>您还没有添加地址，请去添加</view>
+</view>

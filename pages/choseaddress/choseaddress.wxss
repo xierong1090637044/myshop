@@ -1,0 +1,51 @@
+/* pages/choseaddress/choseaddress.wxss */
+.xzdz
+{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #00692f;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 4px;
+}
+.label
+{
+  float: left;
+  width: 95%;
+  height: 10vh;
+  padding: 10px;
+}
+.xm
+{
+  margin-left: 2%;
+  color: #444444;
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+}
+.dh
+{
+  margin-left: 5%;
+  color: #444444;
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+}
+.bottom
+{
+  float: right;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.text
+{
+  border: 1px solid#666;
+  padding: 2px;
+  padding-right: 4px;
+  padding-left: 4px;
+  margin-right: 20px;
+  border-radius: 4px;
+  color: 	#888;
+}

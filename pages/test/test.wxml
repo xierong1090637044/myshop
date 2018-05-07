@@ -5,7 +5,7 @@
   <block wx:for="{{bannerImgaddr}}" wx:key="">
   <navigator url="/pages/detail/detail?title={{item.name}}">
     <swiper-item>
-      <image src="{{item.goodImages.url}}" class="slide-image"/>
+      <image src="{{item.images.url}}" class="slide-image"/>
     </swiper-item>
     </navigator>
   </block>
@@ -58,22 +58,26 @@
     <radio value='{{payContent.yangshi[1]}}' hidden='true'/>{{payContent.yangshi[1]}}
   </label>
   </view>
-  <view class='yangshi4'>
-  <label class="{{radioCheckVal=='true'?'active':''}}">
+  <view class="{{payContent.yangshi[2]==''?'yangshi4':'hidden'}}">
+  <label class="{{radioCheckVal=='true'?'active':'hidden'}}">
     <radio value='{{payContent.yangshi[2]}}' hidden='true'/>{{payContent.yangshi[2]}}
   </label>
   </view>
-  <view class='yangshi4'>
+  <view class="{{payContent.yangshi[2]==''?'yangshi4':'hidden'}}">
   <label class="{{radioCheckVal=='true'?'active':''}}">
     <radio value='{{payContent.yangshi[3]}}' hidden='true'/>{{payContent.yangshi[3]}}
   </label>
   </view>
-  <view class='yangshi4'>
+  <view class="{{payContent.yangshi[2]==''?'yangshi4':'hidden'}}">
   <label class="{{radioCheckVal=='true'?'active':''}}">
     <radio value='{{payContent.yangshi[4]}}' hidden='true'/>{{payContent.yangshi[4]}}
   </label>
   </view>
 </radio-group>
+<view class='yangshi5'>请选择地址</view>
+   <navigator url="/pages/choseaddress/choseaddress" style='width:35%;margin:0 auto'>
+     <view class='yangshi6'>选择地址</view>
+   </navigator>
 </view>
 </view>
 

@@ -2,10 +2,10 @@
   "pages": [
     "pages/test/test",
     "pages/personcenter/personcenter",
-    "pages/contact_us/contact_us",
-    "pages/about_us/about_us",
     "pages/order_car/order_car",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/choseaddress/choseaddress",
+    "pages/addaddress/addaddress"
   ],
   "window": {
     "enablePullDownRefresh": true
@@ -26,6 +26,8 @@
       },
       {
         "pagePath": "pages/order_car/order_car",
+        "iconPath": "images/shopcar.png",
+        "selectedIconPath": "images/shopcar1.png",
         "text": "购物车"
       }
     ]

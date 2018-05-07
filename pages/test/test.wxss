@@ -166,14 +166,15 @@ display: inline-block;
   text-align: center;  
   position: fixed;  
   bottom: 0%;  
-  width: 96%;  
+  width: 93%;
   height: 58%;  
   padding: 8px;  
-  border: 1px solid #e8e9f7;  
-  background-color: white;  
+  border: 6px solid #fff;  
+  border-bottom: unset !important;
+  background-color:#F5F5F5;
   z-index: 1002;  
-  overflow: auto;  
-}  
+  overflow: auto; 
+} 
 .image3
 {
   position: fixed;
@@ -205,16 +206,17 @@ display: inline-block;
   left: 0%;
   padding: 4px;
   font-size: 20px;
-  border-radius: 6px;
 }
 .yangshi1
 {
   color:#000;
   text-align: left;
   padding-left: 4%;
-  width: 100%;
+  width: 96%;
   margin-top: 10px;
   line-height: 35px;
+  border-bottom: 2px solid#efefef;
+  padding-bottom: 10px;
 }
 .yangshi2
 {
@@ -230,7 +232,7 @@ display: inline-block;
   margin-right: 10px;
   margin-left: 4%;
 }
-.yangshi4{  
+.yangshi4{
   width: 20%;
   margin-right: 8%;
   display: inline-block;
@@ -244,4 +246,29 @@ display: inline-block;
   background:#c32626;
   color: #fff;
   border-radius: 35px;
-}  
+}
+
+.hidden
+{
+  display: none;
+}
+
+/* 增加地址*/
+.yangshi5
+{
+  width: 108%;
+  line-height: 35px;
+  text-align: left;
+  margin-left: 4%;
+  font-size: 15px;
+  border-bottom: 2px solid #efefef;
+  margin-top: 10px;
+}
+.yangshi6
+{
+  background: #c32626;
+  color: #fff;
+  border-radius: 4px;
+  line-height: 32px;
+  margin-top: 10px;
+}

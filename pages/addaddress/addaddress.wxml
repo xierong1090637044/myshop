@@ -1,0 +1,31 @@
+<form bindsubmit="formSubmit" bindreset="formReset" class='form'>
+  <view style='float:left;width:100%;padding-bottom:5px;margin-bottom:15px' class="{{style=='true'?'xminput':''}}">
+    <view class="xm">收货人</view>
+    <input name="input1" style='float:left;height:30px !important;margin-left:15px'
+    placeholder="姓名" bindfocus='input' bindblur='outinput'/>
+    <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/14716a8440b3befd80e5b5fc7caa7e13.png' class='nsimg'></image>
+  </view>
+
+  <view style='float:left;width:100%;padding-bottom:5px;margin-bottom:15px' class="{{style1=='true'?'xminput':''}}">
+    <view class="xm">手机号码</view>
+    <input name="input2" style='float:left;height:30px !important;margin-left:15px'
+    placeholder="手机号码" bindfocus='input1' bindblur='outinput1' maxlength='11' type='number'/>
+    <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/fcadea4140dcbcae808ace52d2872e95.png' class='nsimg'></image>
+  </view>
+
+  <view style='float:left;width:100%;padding-bottom:5px;margin-bottom:15px' class="{{style2=='true'?'xminput':''}}">
+    <view class="xm">地区信息</view>
+    <input name="input3" style='float:left;height:30px !important;margin-left:15px'
+    placeholder="地区信息" bindfocus='input2' bindblur='outinput2' type='text'/>
+    <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/61704d5f402e9f238012d50070e0a067.png' class='nsimg'></image>
+  </view>
+
+  <view style='float:left;width:100%;padding-bottom:5px;margin-bottom:15px' class="{{style3=='true'?'xminput':''}}">
+    <view class="xm">详细地址</view>
+    <input name="input4" style='float:left;height:30px !important;margin-left:15px'
+    placeholder="详细地址" bindfocus='input3' bindblur='outinput3' type='text'/>
+  </view>
+  <view class="btn">
+    <button formType="submit" class='btn1'>提交</button>
+  </view>
+</form>

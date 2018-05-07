@@ -1,0 +1,43 @@
+.form
+{
+  float:left;
+  width: 95%;
+  padding: 10px;
+  margin-top: 10px;
+}
+.section1
+{
+  width: 100%;
+ float: left;
+}
+.xm
+{
+  float: left;
+  padding: 3px;
+}
+.xminput
+{
+  border-bottom: 1px solid #00692f;
+}
+.nsimg
+{
+  float: right;
+  width: 30px;
+  height: 30px;
+}
+.btn
+{
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+.btn1
+{
+  width: 20%;
+  float: left;
+  margin: 0 auto;
+  margin-left: 39%;
+  margin-top: 14%;
+  background: #00692f !important;
+  color: #fff;
+}

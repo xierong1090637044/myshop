@@ -7,6 +7,7 @@
 }
 .main
 {
+  z-index: 100;
   float:left;
   width:90%;
   margin-top:0%;
@@ -45,11 +46,12 @@
 }
 .button
 {
-  position: unset !important;
   text-align: center;
   background-color: #fff;
   float: right;
   padding-left: 0px !important;
+  margin-right: 1%;
+  border: unset !important;
 }
 .price
 {
@@ -84,6 +86,7 @@ margin-left: 4%;
 {
   float: left;
   margin-right: 4%;
+  font-size: 14px;
 }
 
 .bg {  
@@ -100,16 +103,17 @@ margin-left: 4%;
   filter: alpha(opacity=70);  
 }  
 .show {  
-  display: none;  
-  text-align: center;  
-  position: fixed;  
-  bottom: 0%;  
-  width: 96%;  
-  height: 58%;  
-  padding: 8px;  
-  border: 1px solid #e8e9f7;  
-  background-color: white;  
-  z-index: 1002;  
+  display: none;
+  text-align: center;
+  position: fixed;
+  bottom: 0%; 
+  width: 93%;
+  height: 58%; 
+  padding: 8px;
+  border: 6px solid #fff;
+  border-bottom: unset !important;
+  background-color:#F5F5F5;
+  z-index: 1002; 
   overflow: auto;  
 }  
 .image3
@@ -190,6 +194,8 @@ margin-left: 4%;
   position: fixed;
   bottom: 0%;
   border-top: 1px solid #efefef;
+  z-index: 1000;
+  background: #efefef;
 }
 .item
 {
@@ -224,4 +230,14 @@ margin-left: 4%;
   line-height: 28px;
   background-color: #c32626;
   color: #fff;
+}
+.btn1
+{
+  padding-left: unset !important;
+  padding-right: unset !important;
+  line-height: unset !important;
+  font-size: unset !important;
+  color: unset !important;
+  background-color: unset !important;
+  border: unset !important;
 }

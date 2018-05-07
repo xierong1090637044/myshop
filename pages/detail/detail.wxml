@@ -23,21 +23,26 @@
 <view style='float:left;width:100%;line-height:40px'>
 <view class='round1'></view><view class='text1'>包邮</view>
 <view class='round1'></view><view class='text1'>品质有保障</view>
-<button open-type="share" class='button'><view style='float:right;line-height:40px;font-size:75%'>分享有礼</view>
+<button open-type="share" plain='true' class='button'><view style='float:right;line-height:40px;font-size:75%'>分享有礼</view>
       <image class='image' src='http://bmob-cdn-18174.b0.upaiyun.com/2018/04/26/c3002bca40d1246280f07dc64dad2a09.png'> </image></button></view>
 </view>
 <!--<view>{{details.content}}</view> -->
 
 <!--沉底的选择-->
 <view class='flex-item'>
-  <view class='item' bindtap='dianzan'> <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/6274aa3440885841806d243d32791820.png' class='imaged1'></image>
+  <view class='item'> 
+  <image style='display:{{dz}}' src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/0f3a748b4019bfb380bc49ee9191181b.png'class='imaged1' bindtap='dianzan'></image>
+<image  style='display:{{mdz}}'
+src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/6274aa3440885841806d243d32791820.png'  class='imaged1' bindtap='dianzan'></image>
   <view class='textd1'>点赞</view>
   </view>
-  <view class='item'> <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/beb34b6c402af239800c919585adfdba.png' class='imaged1'></image>
-  <view class='textd1'>首页</view>
+  <view class='item'>
+  <navigator url="/pages/test/test" open-type="switchTab">
+  <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/650fa08c409b084e806e293c61594301.png' class='imaged1'></image>
+  <view class='textd1'>首页</view></navigator>
   </view>
-  <view class='item'> <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/6274aa3440885841806d243d32791820.png' class='imaged1'></image>
-  <view class='textd1'>点赞</view>
+  <view class='item'> <button open-type="contact" class='btn1' plain='true'><image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/09d49d80401e420480c867b3b6837da9.png' class='imaged1'></image></button>
+  <view class='textd1'>客服</view>
   </view>
   <view class='item1'>
   <view data-id='{{item.name}}' class='textd2' bindtap='payout'>立即购买</view>
@@ -61,17 +66,17 @@
     <radio value='{{details.yangshi[1]}}' hidden='true'/>{{details.yangshi[1]}}
   </label>
   </view>
-  <view class='yangshi4'>
+  <view class="{{payContent.yangshi[2]==''?'yangshi4':''}}">
   <label class="{{radioCheckVal=='true'?'active':''}}">
     <radio value='{{details.yangshi[2]}}' hidden='true'/>{{details.yangshi[2]}}
   </label>
   </view>
-  <view class='yangshi4'>
+  <view class="{{payContent.yangshi[2]==''?'yangshi4':''}}">
   <label class="{{radioCheckVal=='true'?'active':''}}">
     <radio value='{{details.yangshi[3]}}' hidden='true'/>{{details.yangshi[3]}}
   </label>
   </view>
-  <view class='yangshi4'>
+  <view class="{{payContent.yangshi[2]==''?'yangshi4':''}}">
   <label class="{{radioCheckVal=='true'?'active':''}}">
     <radio value='{{details.yangshi[4]}}' hidden='true'/>{{details.yangshi[4]}}
   </label>
