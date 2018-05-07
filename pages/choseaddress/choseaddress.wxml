@@ -1,8 +1,6 @@
 <!--pages/choseaddress/choseaddress.wxml-->
 
-<navigator url='/pages/addaddress/addaddress'>
- <view class='xzdz'>新增地址</view>
-</navigator>
+ <view class='xzdz' bindtap='gotourl'>新增地址</view>
 
 <radio-group class="radio-group" bindchange="radioChange">
 <view style='float:left;width:95%;margin:2%;border:1px solid#ddd;padding-bottom:10px;box-shadow:1px 1px 1px #ddd;display:{{show}}'>

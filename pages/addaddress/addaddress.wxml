@@ -26,6 +26,6 @@
     placeholder="详细地址" bindfocus='input3' bindblur='outinput3' type='text'/>
   </view>
   <view class="btn">
-    <button formType="submit" class='btn1'>提交</button>
+    <button formType="submit" class='btn1'>保存</button>
   </view>
 </form>
