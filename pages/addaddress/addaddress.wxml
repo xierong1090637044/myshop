@@ -2,7 +2,7 @@
   <view style='float:left;width:100%;padding-bottom:5px;margin-bottom:15px' class="{{style=='true'?'xminput':''}}">
     <view class="xm">收货人</view>
     <input name="input1" style='float:left;height:30px !important;margin-left:15px'
-    placeholder="姓名" bindfocus='input' bindblur='outinput'/>
+    placeholder="姓名" bindfocus='input' bindblur='outinput' maxlength='5'/>
     <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/14716a8440b3befd80e5b5fc7caa7e13.png' class='nsimg'></image>
   </view>
 

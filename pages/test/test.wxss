@@ -166,7 +166,7 @@ display: inline-block;
   text-align: center;  
   position: fixed;  
   bottom: 0%;  
-  width: 93%;
+  width: 91%;
   height: 58%;  
   padding: 8px;  
   border: 6px solid #fff;  
@@ -213,10 +213,10 @@ display: inline-block;
   text-align: left;
   padding-left: 4%;
   width: 96%;
-  margin-top: 10px;
+  margin-top: 5px;
   line-height: 35px;
   border-bottom: 2px solid#efefef;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 .yangshi2
 {
@@ -262,13 +262,20 @@ display: inline-block;
   margin-left: 4%;
   font-size: 15px;
   border-bottom: 2px solid #efefef;
-  margin-top: 10px;
 }
 .yangshi6
 {
+  width:50%;
   background: #c32626;
   color: #fff;
   border-radius: 4px;
   line-height: 32px;
-  margin-top: 10px;
+  margin: 0 auto;
+}
+.addrshow
+{
+  width: 95%;
+  margin-left: 4%;
+  font-size: 16px;
+  text-align: left;
 }

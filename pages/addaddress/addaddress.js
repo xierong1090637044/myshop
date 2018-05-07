@@ -140,7 +140,7 @@ Page({
            wx.showToast({
              title: '成功',
              icon: 'success',
-             duration: 5000
+             duration: 2000
            })
          }
          else if(results.length ==1){
@@ -167,7 +167,7 @@ Page({
                      wx.showToast({
                        title: '成功',
                        icon: 'success',
-                       duration: 5000
+                       duration: 2000
                      })
                    },
                  })
@@ -185,7 +185,7 @@ Page({
                      wx.showToast({
                        title: '成功',
                        icon: 'success',
-                       duration: 5000
+                       duration: 2000
                      })
                    },
                  })
@@ -203,7 +203,7 @@ Page({
                      wx.showToast({
                        title: '成功',
                        icon: 'success',
-                       duration: 5000
+                       duration: 2000
                      })
                    },
                  })

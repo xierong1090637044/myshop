@@ -5,48 +5,86 @@
 <radio-group class="radio-group" bindchange="radioChange">
 <view style='float:left;width:95%;margin:2%;border:1px solid#ddd;padding-bottom:10px;box-shadow:1px 1px 1px #ddd;display:{{show}}'>
   <label class="label" style='display:{{show}}'>
-    <radio value="{{address}}" style='float:right;line-height:10vh'/>
-    <view style='float:left;width:90%'>
-    <text style='font-size:20px'>寄件人：</text><text class='xm'>{{address[0]}}</text><text class='dh'>{{address[1]}}</text>
+    <radio value="{{address}}" style='float:right;margin-top:5%'/>
+    <view style='float:left;width:89%'>
+    <text style='font-size:17px'>寄件人：</text><text class='xm'>{{address[0]}}</text><text class='dh'>{{address[1]}}</text>
     </view>
-    <view style='float:left;width:90%'>
-    <text style='font-size:20px'>地址：</text>
+    <view style='float:left;width:89%'>
+    <text style='font-size:17px'>地址：</text>
     <text style='font-size:15px' class='dh'>{{address[2]}}{{address[3]}}</text>
     </view>
   </label>
-  <view class='bottom' style='display:{{show}}'><text class='text' bindtap='remove'>删除</text><text class='text' bindtap='modify'>修改</text></view>
+  <view class='bottom' style='display:{{show}}'><text class='text' bindtap='remove'>删除</text><text class='text' bindtap='modify'>修改</text>
+  </view>
   </view>
 
   <view style='float:left;width:95%;margin:2%;border:1px solid#ddd;padding-bottom:10px;box-shadow:1px 1px 1px #ddd;display:{{show1}}'>
   <label class="label">
-    <radio value="{{address1}}" style='float:right;line-height:10vh'/>
-    <view style='float:left;width:90%'>
-    <text style='font-size:20px'>寄件人：</text><text class='xm'>{{address1[0]}}</text><text class='dh'>{{address1[1]}}</text>
+    <radio value="{{address1}}" style='float:right;margin-top:5%'/>
+    <view style='float:left;width:89%'>
+    <text style='font-size:17px'>寄件人：</text><text class='xm'>{{address1[0]}}</text><text class='dh'>{{address1[1]}}</text>
     </view>
-    <view style='float:left;width:90%'>
-    <text style='font-size:20px'>地址：</text>
+    <view style='float:left;width:89%'>
+    <text style='font-size:17px'>地址：</text>
     <text style='font-size:15px' class='dh'>{{address1[2]}}{{address1[3]}}</text>
     </view>
   </label>
-  <view class='bottom' style='display:{{show1}}'><text class='text'>删除</text><text class='text'>修改</text></view>
+  <view class='bottom' style='display:{{show1}}'><text class='text' bindtap='remove1'>删除</text><text class='text' bindtap='modify1'>修改</text></view>
   </view>
 
   <view style='float:left;width:95%;margin:2%;border:1px solid#ddd;padding-bottom:10px;box-shadow:1px 1px 1px #ddd;display:{{show2}}'>
   <label class="label" style='display:{{show2}}'>
-    <radio value="{{address2}}" style='float:right;line-height:10vh'/>
-    <view style='float:left;width:90%'>
-    <text style='font-size:20px'>寄件人：</text><text class='xm'>{{address2[0]}}</text><text class='dh'>{{address2[1]}}</text>
+    <radio value="{{address2}}" style='float:right;margin-top:5%'/>
+    <view style='float:left;width:89%'>
+    <text style='font-size:17px'>寄件人：</text><text class='xm'>{{address2[0]}}</text><text class='dh'>{{address2[1]}}</text>
     </view>
-    <view style='float:left;width:90%'>
-    <text style='font-size:20px'>地址：</text>
+    <view style='float:left;width:89%'>
+    <text style='font-size:17px'>地址：</text>
     <text style='font-size:15px' class='dh'>{{address2[2]}}{{address2[3]}}</text>
     </view>
   </label>
-  <view class='bottom' style='display:{{show2}}'><text class='text'>删除</text><text class='text'>修改</text></view>
+  <view class='bottom' style='display:{{show2}}'><text class='text' bindtap='remove2'>删除</text><text class='text' bindtap='modify2'>修改</text></view>
   </view>
 </radio-group>
 
+<!--没有地址时的显示-->
 <view style='text-align:center;display:{{show3}}'>
   <image style='height:50px;width:50px;margin-top:50%'src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/f334160740bfaa00808c3eceb75bdfeb.png'></image>
   <view style='font-size:15px;margin-top:2%;color:#444'>您还没有添加地址，请去添加</view>
 </view>
+
+<!--修改收货地址-->
+<view class="bg" style='display:{{display}}' bindtap='hideview'></view>  
+<view class="show" style='display:{{display}}'>
+<form bindsubmit="formSubmit" class='form'>
+  <view style='float:left;width:100%;padding-bottom:5px;margin-bottom:15px' class="{{style=='true'?'xminput':''}}">
+    <view class="xm1">收货人</view>
+    <input name="input1" style='float:left;height:30px !important;margin-left:15px;width:61%;text-align:left;margin-top:2px'
+    placeholder="姓名" bindfocus='input' bindblur='outinput' maxlength='5' value='{{showaddress[0]}}'/>
+    <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/14716a8440b3befd80e5b5fc7caa7e13.png' class='nsimg'></image>
+  </view>
+
+  <view style='float:left;width:100%;padding-bottom:5px;margin-bottom:15px' class="{{style1=='true'?'xminput':''}}">
+    <view class="xm1">手机号码</view>
+    <input name="input2" style='float:left;height:30px !important;margin-left:15px;width:60%;text-align:left;margin-top:2px'
+    placeholder="手机号码" bindfocus='input1' bindblur='outinput1' maxlength='11' type='number' value='{{showaddress[1]}}'/>
+    <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/fcadea4140dcbcae808ace52d2872e95.png' class='nsimg'></image>
+  </view>
+
+  <view style='float:left;width:100%;padding-bottom:5px;margin-bottom:15px' class="{{style2=='true'?'xminput':''}}">
+    <view class="xm1">地区信息</view>
+    <input name="input3" style='float:left;height:30px !important;margin-left:15px;width:60%;text-align:left;margin-top:2px'
+    placeholder="地区信息" bindfocus='input2' bindblur='outinput2' type='text' value='{{showaddress[2]}}'/>
+    <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/06/61704d5f402e9f238012d50070e0a067.png' class='nsimg'></image>
+  </view>
+
+  <view style='float:left;width:100%;padding-bottom:5px;margin-bottom:15px' class="{{style3=='true'?'xminput':''}}">
+    <view class="xm1">详细地址</view>
+    <input name="input4" style='float:left;height:30px !important;margin-left:15px;width:70%;text-align:left;margin-top:2px；overflow:unset !important'
+    placeholder="详细地址" bindfocus='input3' bindblur='outinput3' type='text' value='{{showaddress[3]}}'/>
+  </view>
+  <view class="btn">
+    <button formType="submit" class='btn1'>保存</button>
+  </view>
+</form>  
+</view> 

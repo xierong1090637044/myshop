@@ -15,6 +15,8 @@ Page({
     display: 'none' ,
     payContent:[],
     radioCheckVal:'',
+    secaddr:[],
+    dzshow:'',
   },
   onLoad: function (options) {
     that = this;
@@ -51,6 +53,20 @@ Page({
     // Do something when page ready.
   },
   onShow: function () {
+    var secAddr = wx.getStorageSync('selectedaddr');
+    var result = secAddr.split(',');
+    var address = [];
+    for (var i = 0; i < result.length; i++) {
+      address[i] = result[i]
+    }
+    console.log(address)
+
+    if (secAddr != '') {
+      that.setData({
+        secaddr: address,
+        dzshow: 'none'
+      })
+    }
   },
 
   joincar: function (e) {

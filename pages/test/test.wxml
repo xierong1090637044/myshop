@@ -75,8 +75,15 @@
   </view>
 </radio-group>
 <view class='yangshi5'>请选择地址</view>
-   <navigator url="/pages/choseaddress/choseaddress" style='width:35%;margin:0 auto'>
-     <view class='yangshi6'>选择地址</view>
+   <navigator url="/pages/choseaddress/choseaddress">
+     <view class='yangshi6' style='display:{{dzshow}}'>选择地址</view>
+
+     <view class='addrshow'>
+     <text style='color:#888'>{{secaddr[0]}}</text>
+     <text style='margin-left:5px;font-size:14px;color:#aeaeae'>{{secaddr[1]}}</text></view>
+     <view class='addrshow'>
+     <text style='color:#888'>{{secaddr[2]}}</text>
+     <text style='color:#888'>{{secaddr[3]}}</text></view>
    </navigator>
 </view>
 </view>
