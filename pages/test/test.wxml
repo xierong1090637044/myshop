@@ -34,20 +34,22 @@
   </navigator>
   <view class='rec-text'>
       <view class="jiage">价格</view>
-      <view class='rec-price'>{{item.price}}</view>
+      <view class='rec-price'>￥{{item.price}}</view>
       <view data-id='{{item.name}}'class='jiage1' bindtap='joincar'><image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/04/20/853a893040f3400480db85337f1d0862.png'  class='gouwuche'></image></view>
-      <view data-id='{{item.name}}' class='goumai' bindtap='payout'>立即购买</view>
+      <view data-id='{{item.name}}' class='goumai' bindtap='payout'>发送通知</view>
   </view>
 </view>
 </view>
 
 <!--立即购买-->  
-<view class="bg" bindtap='hideview' style='display:{{display}}'></view>  
-<view class="show" style='display:{{display}}'>
-<view class='price'>{{payContent.price}}</view>
+<view class="bg" bindtap='hideview' style='display:{{display}}'></view> 
+<form bindsubmit="formSubmit" report-submit='true'>
+<view scroll-y='true' class="show" style='display:{{display}}'>
+<view class='type'>{{payContent.type}}</view>
+<view class='price'>单价：￥{{payContent.price}}</view>
 <view class='yangshi'>
 <view class='yangshi2'>请选择颜色</view>
-<radio-group class="yangshi1" bindchange="radioChange">
+<radio-group class="yangshi1" bindchange="radioChange" name='yanse'>
 <view class='yangshi4'>
   <label class="{{radioCheckVal=='白色'?'active':''}}">
     <radio value='{{payContent.yangshi[0]}}' hidden='true'/>{{payContent.yangshi[0]}}
@@ -75,18 +77,33 @@
   </view>
 </radio-group>
 <view class='yangshi5'>请选择地址</view>
-   <navigator url="/pages/choseaddress/choseaddress">
+   <navigator url="/pages/choseaddress/choseaddress" style='border-bottom:1px solid#efefef'>
      <view class='yangshi6' style='display:{{dzshow}}'>选择地址</view>
-
-     <view class='addrshow'>
-     <text style='color:#888'>{{secaddr[0]}}</text>
-     <text style='margin-left:5px;font-size:14px;color:#aeaeae'>{{secaddr[1]}}</text></view>
-     <view class='addrshow'>
-     <text style='color:#888'>{{secaddr[2]}}</text>
-     <text style='color:#888'>{{secaddr[3]}}</text></view>
+     <view class='addrshow' style='display:{{addrshow}}'>
+     <input style='color:#888;width:40%;display:inline-block' value='{{secaddr[0]}}' name='xm'></input>
+     <input style='color:#888;width:40%;display:inline-block' value='{{secaddr[1]}}' name='dh'></input>
+     </view>
+     <view class='addrshow' style='display:{{addrshow}}'>
+     <input style='color:#888' value='{{secaddr[2]}}{{secaddr[3]}}' name='address'></input>
+     </view>
    </navigator>
-</view>
-</view>
+   <view class='yangshi5'>请输入购买数量</view>
+   <view class='yangshi7'>
+   <text class='reduce' bindtap="add">+</text>
+   <input  bindinput="bindKeyInput" value='{{value}}' bindinput="bindKeyInput" disabled='true'class='inputnum'placeholder-class='holder' name = 'number'/>
+   <text class='reduce' bindtap='reduce'>-</text></view>
 
-<view class='image3' style='display:{{display}}'><image src='{{payContent.images.url}}' class='image4'></image></view> 
+   <text class='yangshi8'>应付总额</text>
+   <input  bindinput="bindKeyInput" value='￥{{payfor}}' bindinput="bindKeyInput" disabled='true'class=' inputnum1'placeholder-class='holder' name = 'payfor'/>
+</view>
+<button formType="submit" class='goumai1'>选好了</button>
+</view>
+</form>
+
+<view class='image3' style='display:{{display}}'><image src='{{payContent.images.url}}' class='image4'></image></view>
+
+<view class='notify' style='display:{{display}}'>
+  <view>选好了，请点击发送通知</view>
+  <view>付款后由店主进行发货</view>
+</view>
 </view>

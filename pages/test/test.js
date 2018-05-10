@@ -17,6 +17,9 @@ Page({
     radioCheckVal:'',
     secaddr:[],
     dzshow:'',
+    addrshow:'none',
+    value:1,
+    payfor:'',
   },
   onLoad: function (options) {
     that = this;
@@ -53,6 +56,7 @@ Page({
     // Do something when page ready.
   },
   onShow: function () {
+    //选中地址后显示出来
     var secAddr = wx.getStorageSync('selectedaddr');
     var result = secAddr.split(',');
     var address = [];
@@ -64,63 +68,23 @@ Page({
     if (secAddr != '') {
       that.setData({
         secaddr: address,
-        dzshow: 'none'
+        dzshow: 'none',
+        addrshow:'block',
       })
     }
   },
 
   joincar: function (e) {
-    that = this;
-    var id = e.currentTarget.dataset.id;//使用event.currentTarget.dataset.XX获取内容  
-    var objectid;
-
-    var Diary = Bmob.Object.extend("order_car");
-    var query = new Bmob.Query(Diary);
-      query.equalTo("parsent", id);
-      query.find({
-        success: function (results) {
-          console.log("共查询到 " + results.length + " 条记录");
-          for (var i = 0; i < results.length; i++) {
-            var object = results[i];
-            console.log(object.id);
-          }
-          if(results.length == 0)
-          {
-            var Post = Bmob.Object.extend("recommend");
-            var Comment = Bmob.Object.extend("order_car");
-            var myComment = new Comment();
-            var post = new Post();
-            post.id = id;
-            myComment.set("parsent", post);
-            //myComment.set("quality", "1");
-            myComment.save();
-            wx.showToast({
-              title: '商品已加入购物车',
-              icon: 'none',
-              duration: 1500
-            })
-          }
-         else{
-            wx.showToast({
-              title: '请勿重复添加该商品',
-              icon:'none',
-              duration: 1500,
-              mask:true
-            })
-          }
-        },
-      });
+    
   },
 
-  //立即购买功能
+  //发送通知功能
   payout: function(e){
     that = this;
     that.setData({
-      radioCheckVal:''
-    });
-
-    that.setData({
-      payContent: ''
+      radioCheckVal:'',
+       payContent: '',
+       display: "block",
     });
 
     var id = e.currentTarget.dataset.id;//使用event.currentTarget.dataset.XX获取内容  
@@ -130,14 +94,104 @@ Page({
     query.get(id, {
       success: function (result) {
         console.log(result)
+        var price = result.get("price")
+        wx.setStorageSync('type', result)
         that.setData({
-          payContent:result
+          payContent:result,
+          payfor:price
         })
       },
     });
-      that.setData({
-        display: "block"
+  },
+  
+
+  //选好了
+  formSubmit: function (e) {
+    var value = e.detail.value;
+    var good_detail = wx.getStorageSync('type');
+    var type1 = good_detail.type;
+    console.log(type1)
+    var yanse =value.yanse;
+    var xm = value.xm;
+    var dh = value.dh;
+    var address = value.address;
+    var number1 = value.number;
+    var payfor = value.payfor;
+    var currentUser = Bmob.User.current();
+    var sessiontoken = currentUser._sessionToken;
+
+    if (yanse=='' ||xm==''||dh==''||address=='')
+    {
+      wx.showModal({
+        title: '提示',
+        showCancel: false,
+        content: '请选择正确的信息',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } 
+        }
       })
+    }
+    else{
+      var openid = wx.getStorageSync('openid')
+      var temp = {
+        "touser": 'os4Px5EwBtZB1SQrPWPwMl0OfinQ',
+        "template_id": "3E9vv0vk8_56NIfpRT8vArDD-a1mBkgq-kSBswdcBHE",
+        "page": "",
+        "form_id": e.detail.formId,
+        "url": 'https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=' + sessiontoken,
+        "data": {
+          "keyword1": {
+            "value": payfor
+          },
+          "keyword2": {
+            "value": type1 + yanse + number1
+          },
+          "keyword3": {
+            "value": xm
+          },
+          "keyword4": {
+            "value": dh
+          },
+          "keyword5": {
+            "value": address
+          }
+        },
+        "emphasis_keyword": "keyword1.DATA"
+      }
+      Bmob.sendMessage(temp).then(function (obj) {
+        wx.showToast({
+          title: '发送成功',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+        function (err) {
+          console.log(err)
+        });
+    }
+  },
+
+  //加1减1
+  add: function(e){
+    var good_detail = wx.getStorageSync('type');
+    var price = good_detail.price;
+     this.setData({
+       value: this.data.value+1,
+       payfor: (this.data.value + 1)*price
+     })
+  },
+
+  reduce: function(){
+    var good_detail = wx.getStorageSync('type');
+    var price = good_detail.price;
+    if(this.data.value >= 2){
+    this.setData({
+      value: this.data.value - 1,
+      payfor: (this.data.value - 1) * price
+    })
+    }
   },
 
   //mask隐藏或消失

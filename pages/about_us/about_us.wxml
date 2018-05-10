@@ -1,7 +1,0 @@
-<view>
-   <map id="myMap" class='map' show-location />
-   <view class='header'>地址：</view>
-   <view class='content'>当前我们坐落在上海市普陀区的绿洲中环中心</view>
-   <view class='header'>简介:</view>
-   <view class='content'>还未想好</view>
-</view>
