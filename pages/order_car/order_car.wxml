@@ -1,1 +1,27 @@
-<view bindtap='tongzhi'>通知</view>
+<view class='addr' style='display:{{noaddr}}'>
+  <view class='dqsh'>当前收货地址：</view>
+  <view style='font-size:15px;'><text>{{address[0]}}</text><text style='margin-left:10px'>{{address[1]}}</text></view>
+   <view style='font-size:16px;'>{{address[2]}}{{address[3]}}</view>
+</view>
+
+<view wx:for="{{shoucang}}" wx:key =""  style='width:98%;float:left;padding:4px' >
+<view data-id='{{item.name}}' bindtap='showactions' class='header'>
+   <image src='{{item.images}}' class='gdimg1'></image>
+   <view class='text1'>
+      <view class='item1'>
+        <text class='text2'>{{item.type}}</text>
+        <text class='text3'>{{item.yanse}}</text>
+      </view>
+      <view class='item1'>
+         <text class='text2'>数量：{{item.number}}</text>
+         <text class='text3'>总额：{{item.money}}</text>
+      </view>
+      </view>
+   </view>
+</view>
+
+<view style='display:{{nogoods}}' class='showcontent'>
+    <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/11/aaa83a0440d26c87806187b45f11b9bf.PNG' class='scimg1'></image>
+    <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/11/a9616604401e2df780c0a73e4d6fdbb5.png' class='scimg'></image>
+    <view class='sctext' bindtap='gotosc'>去收藏</view>
+</view>

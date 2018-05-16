@@ -16,10 +16,12 @@
 <view class='price1'>￥{{payContent.price}}</view>
 </view>
 <view style='padding:13px;padding-top:13px;float:left;width:90%'>
-<view class='float'>
-  <view class='text'>维维</view>
-  <view style='float:left;line-height:40px;margin-left:10%'>{{payContent.type}}</view>
-</view></view>
+  <view class='float'>
+    <view class='text'>维维</view>
+    <view style='float:left;line-height:40px;margin-left:10%'>{{payContent.type}}</view>
+    <text style='float:right;line-height:40px;margin-left:10%;font-size:16px;color:#f38900'>热度：{{redu}}</text>
+  </view>
+</view>
 <view style='float:left;width:100%;line-height:40px'>
 <view class='round1'></view><view class='text1'>包邮</view>
 <view class='round1'></view><view class='text1'>品质有保障</view>
@@ -88,11 +90,11 @@ src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/6274aa3440885841806d243d327
    <navigator url="/pages/choseaddress/choseaddress" style='border-bottom:1px solid#efefef'>
      <view class='yangshi6' style='display:{{dzshow}}'>选择地址</view>
      <view class='addrshow' style='display:{{addrshow}}'>
-     <input style='color:#888;width:40%;display:inline-block' value='{{secaddr[0]}}' name='xm'></input>
-     <input style='color:#888;width:40%;display:inline-block' value='{{secaddr[1]}}' name='dh'></input>
+     <input style='color:#888;width:40%;display:inline-block' value='{{secaddr[0]}}' name='xm' disabled='true'></input>
+     <input style='color:#888;width:40%;display:inline-block' value='{{secaddr[1]}}' name='dh' disabled='true'></input>
      </view>
      <view class='addrshow' style='display:{{addrshow}}'>
-     <input style='color:#888' value='{{secaddr[2]}}{{secaddr[3]}}' name='address'></input>
+     <input style='color:#888' value='{{secaddr[2]}}{{secaddr[3]}}' name='address' disabled='true'></input>
      </view>
    </navigator>
    <view class='yangshi5'>请输入购买数量</view>
@@ -101,8 +103,10 @@ src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/6274aa3440885841806d243d327
    <input  bindinput="bindKeyInput" value='{{value}}' bindinput="bindKeyInput" disabled='true'class='inputnum'placeholder-class='holder' name = 'number'/>
    <text class='reduce' bindtap='reduce'>-</text></view>
 
+   <view class='yangshi5'>
    <text class='yangshi8'>应付总额</text>
    <input  bindinput="bindKeyInput" value='￥{{payfor}}' bindinput="bindKeyInput" disabled='true'class=' inputnum1'placeholder-class='holder' name = 'payfor'/>
+   </view>
 </view>
 <button formType="submit" class='goumai1'>选好了</button>
 </view>

@@ -308,12 +308,12 @@ margin-left: 4%;
 }
 .yangshi7
 {
-  width: 94%;
+  width: 85%;
   float: left;
   line-height: 45px;
   font-size: 15px;
   border-bottom: 2px solid #efefef;
-  padding-left: 10%;
+  padding-left: 15%;
 }
 .holder
 {
@@ -334,12 +334,19 @@ margin-left: 4%;
   line-height: 35px;
   float: left;
   margin-left: 4%;
-  font-size: 15px;
+  font-size: 20px;
   border-bottom: 2px solid #efefef;
 }
 .inputnum1
 {
   float:right;
   margin-top:5px;
-  color: #c32626
+  color: #c32626;
+  font-size: 20px;
+  text-align: right;
+  padding-right: 5px;
+}
+.hidden
+{
+  display: none;
 }

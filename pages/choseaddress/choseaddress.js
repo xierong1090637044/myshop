@@ -53,12 +53,14 @@ Page({
           if (address == '' && address1 == '' && address2 == '')
           {
             that.setData({show3:'block'})
+            wx.setStorageSync('selectedaddr', '')
+          }else{
+            that.setData({
+              address: address,
+              address1: address1,
+              address2: address2
+            })
           }
-          that.setData({
-            address: address,
-            address1: address1,
-            address2: address2
-          })
       },
     });
   },
@@ -108,10 +110,10 @@ Page({
     })
     setTimeout(function () {
       wx.hideLoading();
-      wx.redirectTo({
+      wx.reLaunch({
         url: '/pages/choseaddress/choseaddress'
       })
-    }, 1000)
+    }, 500)
   },
 
   remove1: function () {

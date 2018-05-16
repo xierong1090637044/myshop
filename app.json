@@ -5,7 +5,9 @@
     "pages/order_car/order_car",
     "pages/detail/detail",
     "pages/choseaddress/choseaddress",
-    "pages/addaddress/addaddress"
+    "pages/addaddress/addaddress",
+    "pages/about_us/about_us",
+    "pages/contact_us/contact_us"
   ],
   "window": {
     "enablePullDownRefresh": true

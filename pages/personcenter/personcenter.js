@@ -5,8 +5,10 @@ Page({
   data: {
     userInfo: {},
     weatherData: '' ,
+    display:'none',
   },
   onLoad: function () {
+    wx.setStorageSync('userdata', '')
     var that = this
     // 新建百度地图对象 
     var BMap = new bmap.BMapWX({
@@ -29,13 +31,44 @@ Page({
     }); 
     
     //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
+   /* app.getUserInfo(function (userInfo) {
       //更新数据
       console.log(userInfo)
       that.setData({
         userInfo: userInfo
       })
-    });    
+    });    */
+
+    setInterval(function(){
+      wx.getSetting({
+        success: function (res) {
+          if (res.authSetting['scope.userInfo']) {
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+            wx.getUserInfo({
+              success: function (res) {
+                  wx.setStorageSync('userdata', res.userInfo);
+                  that.setData({
+                    userInfo: res.userInfo,
+                  })
+              }
+            })
+          }
+        }
+      })
+      setTimeout(function(){
+        var userdata = wx.getStorageSync('userdata');
+        if (userdata == '') {
+          that.setData({
+            display: 'block'
+          })
+        }
+        else {
+          that.setData({
+            display: 'none'
+          })
+        }
+      },1000)
+    },1000)
   },
 
 // Do something when show.
@@ -55,6 +88,14 @@ Page({
   {
     wx.navigateTo({
       url: '../../pages/about_us/about_us',
+    })
+  },
+
+  refuse:function()
+  {
+    wx.setStorageSync('userdata', 'none')
+    this.setData({
+      display:'none'
     })
   }
 

@@ -1,0 +1,15 @@
+.map
+{
+  width: 100%;
+}
+.header
+{
+  font-size: 38rpx;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+.content
+{
+  margin-left: 90rpx;
+  font-size: 40rpx;
+}

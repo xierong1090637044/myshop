@@ -21,6 +21,7 @@ Page({
     addrshow: 'none',
     value: 1,
     payfor: '',
+    redu:'',
   },
 
   /**
@@ -69,13 +70,13 @@ Page({
      // 查询所有数据
      query.find({
        success: function (results) {
-         console.log("共查询到 " + results.length + " 条记录");
+         var redu = results.length;
+         wx.setStorageSync('redu', redu);
          var currentUser = Bmob.User.current();
          var id = currentUser.id;
          // 循环处理查询到的数据
          for (var i = 0; i < results.length; i++) {
            var object = results[i];
-           console.log(object.id + ' - ' + object.get('parsent_id'));
            if (object.get('parsent_id') == id)
            {
              state1 = 'true'
@@ -85,13 +86,30 @@ Page({
          {
            that.setData({
              dz:'show',
-             mdz:'none'
+             mdz:'none',
+             redu: results.length
              })
          }
        },
-       error: function (error) {
-         console.log("查询失败: " + error.code + " " + error.message);
-       }
+     });
+
+     var Diary = Bmob.Object.extend("recommend");
+     var query = new Bmob.Query(Diary);
+     var redu = wx.getStorageSync('redu')
+     query.get(id, {
+       success: function (result) {
+         result.set('redu', redu);
+         result.save();
+       },
+     });
+
+     var Diary1 = Bmob.Object.extend("goods");
+     var query = new Bmob.Query(Diary1);
+     query.get(id, {
+       success: function (result) {
+         result.set('redu', redu);
+         result.save();
+       },
      });
   },
 
